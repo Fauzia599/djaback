@@ -13,6 +13,10 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 from logging import config
 from pathlib import Path
 import os
+from decouple import config
+
+SECRET_KEY = config('myhobby')  # This fetches 'myhobby' from the .env file
+
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -22,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-from decouple import config # type: ignore
+
 SECRET_KEY =config('myhobby')
  #Security settings for production # type: ignore
 SECURE_HSTS_SECONDS = 31536000  # 1 year
@@ -34,7 +38,7 @@ CSRF_COOKIE_SECURE = True
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 

@@ -8,19 +8,12 @@ https://docs.djangoproject.com/en/5.1/howto/deployment/wsgi/
 """
 
 import os
+from django.core.wsgi import get_wsgi_application  # Corrected spelling
 
-from django.core.wsgi import get_wsgi_application
+# Determine which settings module to use
+setting_module = "myproject.deployment" if "RENDER_EXTERNALHOSTNAME" in os.environ else "myproject.settings"
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'myproject.settings')
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", setting_module)
 
-application = get_wsgi_application()
-
-import os
-
-from django .core.wsql import get_wsqi_application # type: ignore
-
-setting_module ="myproject.deployment" if "RENDER_EXTERNAL_HOSTNAME" in  os.environ else "myproject.settings"
-
-os.environ.setdefault("DJANGO _SETTINGS_MODULE" ,setting_module)
-
+# Corrected spelling for get_wsgi_application
 application = get_wsgi_application()

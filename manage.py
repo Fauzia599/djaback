@@ -1,13 +1,16 @@
-#!/usr/bin/env python
+
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
 
 
+
 def main():
     """Run administrative tasks."""
-setting_module ="myproject.deployment" if "RENDER_EXTERNAL_HOSTNAME" in  os.environ else "myproject.settings"
-os.environ.setdefault('DJANGO _SETTINGS_MODULE',setting_module)
+    setting_module = "myproject.deployment" if "RENDER_EXTERNALHOSTNAME" in os.environ else "myproject.settings"
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'myproject.settings')
+
     
 try:
      from django.core.management import execute_from_command_line

@@ -11,7 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-setting_module='university.deployment'if 'RENDER_EXTEND':
-os.environ.setdefault('DJANGO _SETTINGS_MODULE',setting_module)
+os.environ.setdefault("DJANGO_SETTINGS_MODULE, myproject.settings")
 
 application = get_asgi_application()

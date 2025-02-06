@@ -1,7 +1,6 @@
 import os
 from .settings import *
 from .settings import BASE_DIR
-import dj_database_url
 
 ALLOWED_HOSTS = [os.environ['WEBSITE_HOSTNAME']]
 CSRF_TRUSTED_ORIGINS = ['HTTPS://'+os.environ['WEBSITE_HOSTNAME']]
@@ -11,7 +10,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 
 
 MIDDLEWARE = [
-    "django.middleware.security.SecurityMiddleware",
+    "django.middleware.security.SecurityMiddleware"
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -37,17 +36,17 @@ STORAGES = {
     },
 }
 
-DATABASES={
-    'default': dj_database_url.config(
-        default=os.environ["DATABASE_URL"],
-        conn_max_age=600
+
+
+DATABASES = {
+    'default' : dj_database_url.config(
+
+        #replace the value with ur local database connection string
+        default = os.environ["DATABASE_URL"],
+        conn_max_age = 600
     )
-}
-
-
-
         
-    
+}
 
 
 STATIC_ROOT =  BASE_DIR / 'staticfiles'
