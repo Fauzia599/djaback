@@ -13,7 +13,7 @@ from django.core.wsgi import get_wsgi_application  # Corrected spelling
 # Determine which settings module to use
 setting_module = "myproject.deployment" if "RENDER_EXTERNALHOSTNAME" in os.environ else "myproject.settings"
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", setting_module)
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'myproject.settings')
 
 # Corrected spelling for get_wsgi_application
 application = get_wsgi_application()

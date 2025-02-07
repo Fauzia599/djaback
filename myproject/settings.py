@@ -87,7 +87,7 @@ CSRF_TRUSTED_ORIGINS = [
 
 
 
-ROOT_URLCONF = 'RealEstate.urls'
+ROOT_URLCONF = 'myproject.urls'
 
 TEMPLATES = [
     {
@@ -105,7 +105,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'RealEstate.wsgi.application'
+WSGI_APPLICATION = 'myproject.wsgi.application'
 
 
 # Database
